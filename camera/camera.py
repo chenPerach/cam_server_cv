@@ -58,4 +58,15 @@ class camera(cv2.VideoCapture):
     def __init__(self,src = 0):
         super().__init__(src)
 
+    def loadSetting():
+        """
+         this function automatically loads the settings for the camera from a json file 
+        """
+        pass
+
+class setting:
+    """
+    a simple json hendler for the camera settings
+    """
+    
             
