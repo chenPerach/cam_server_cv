@@ -2,10 +2,25 @@
 
 {% block head %}
 <title>video stream</title>
+<script src="{{ url_for('static',filename='javascript/hsvSender.js') }}"></script>
 {% endblock %}
 
 
 {% block body %}
-<h1>ip webcam</h1>
-<img src="{{ url_for('video_feed') }}"> 
+<header id="mainHeader">
+    <div class="container">
+        <h1>ip webcam</h1>
+    </div>
+</header>
+
+<img id="main_camera" src="{{ url_for('video_feed') }}">
+<br> 
+<form>
+    h max<input type="range" min="0" max="200" value="100" name="test" id="hmax"><br>
+    s max<input type="range" min="0" max="200" value="100" name="test" id="smax"><br>
+    v max<input type="range" min="0" max="200" value="100" name="test" id="vmax"><br>
+    h min<input type="range" min="0" max="200" value="100" name="test" id="hmin"><br>
+    s min<input type="range" min="0" max="200" value="100" name="test" id="smin"><br>
+    v min<input type="range" min="0" max="200" value="100" name="test" id="vmin"><br>
+</form>
 {% endblock %}
