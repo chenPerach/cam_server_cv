@@ -1,5 +1,6 @@
 from threading import Thread
 import cv2
+import os
 
 class stream:
     """
@@ -22,8 +23,10 @@ class stream:
         while True:
             if self.stopped:
                 return
-            _,self.frame = self.stream.read()
-    
+            if not stream.isOpened():
+                self.frame = cv2.imread(os.getcwd() +  "/static/resources/camnt.png")
+            else:
+                _,self.frame = self.stream.read()
     def start(self):
         """
         starts a simple thread for the camera that updates the current frame

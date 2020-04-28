@@ -1,4 +1,3 @@
-setInterval(sendjson,1000,"/proccesHSV")
 
 function getjson(){
     const json = {
@@ -9,6 +8,6 @@ function getjson(){
         smin: document.getElementById("smin").value,
         vmin: document.getElementById("vmin").value
     };
-    console.log(JSON.stringify(json))
     return json
 }
+

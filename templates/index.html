@@ -2,25 +2,40 @@
 
 {% block head %}
 <title>video stream</title>
-<script src="{{ url_for('static',filename='javascript/hsvSender.js') }}"></script>
+<script >
+$(document).ready(function () {
+    $("#slider").slider({
+        range: true,
+        min:0,
+        max:180
+    })
+})
+</script>
 {% endblock %}
 
 
-{% block body %}
-<header id="mainHeader">
-    <div class="container">
-        <h1>ip webcam</h1>
-    </div>
-</header>
-
-<img id="main_camera" src="{{ url_for('video_feed') }}">
-<br> 
-<form>
-    h max<input type="range" min="0" max="200" value="100" name="test" id="hmax"><br>
-    s max<input type="range" min="0" max="200" value="100" name="test" id="smax"><br>
-    v max<input type="range" min="0" max="200" value="100" name="test" id="vmax"><br>
-    h min<input type="range" min="0" max="200" value="100" name="test" id="hmin"><br>
-    s min<input type="range" min="0" max="200" value="100" name="test" id="smin"><br>
-    v min<input type="range" min="0" max="200" value="100" name="test" id="vmin"><br>
-</form>
+{% block form %}
+<div class="form-group">
+  <label id="top-label" for="exampleInputEmail1">Hue</label>
+  <div class="my-slider"></div>
+  <small id="Hue-range" class="form-text text-muted">range: </small>
+</div>
+<div class="form-group">
+  <label for="exampleInputEmail1">Value</label>
+  <div class="my-slider"></div>
+  <small id="Hue-range" class="form-text text-muted">range: </small>
+</div>
+<div class="form-group">
+  <label for="exampleInputEmail1">Saturation</label>
+  <div class="my-slider"></div>
+  <small id="Hue-range" class="form-text text-muted">range: </small>
+</div>
+<div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="dilation">
+  <label class="custom-control-label" for="dilation">Dilation</label>
+</div>
+<div class="custom-control custom-switch">
+  <input type="checkbox" class="custom-control-input" id="customSwitch2">
+  <label class="custom-control-label" for="customSwitch2">Toggle this switch element</label>
+</div>
 {% endblock %}

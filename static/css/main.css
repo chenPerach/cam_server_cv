@@ -1,3 +1,26 @@
-body {
-    font-family: Arial, Helvetica, sans-serif;
+.my-container {
+    border: 1px solid #cccccc;
+}
+.ui-slider-range {
+    background-color: #444c54;
+}
+.ui-slider {
+    margin-bottom: 5px;
+    margin-left: 10px;
+    max-width: 20vw;
+}
+#top-label  {
+    margin-top: 3vh;
+}
+.custom-switch {
+    margin-bottom: 1vh;
+}
+.my-row.top {
+    min-height: 50vh;
+}
+.my-col.right {
+    text-align: center;
+}
+.my-video {
+    margin-top: 3vh;
 }

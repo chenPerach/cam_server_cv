@@ -1,6 +1,5 @@
 from flask import Flask, render_template,url_for,Response,request
 from camera.camera import stream
-from flask_socketio import SocketIO, emit,SocketIOTestClient
 import cv2
 frame = None
 
@@ -33,10 +32,16 @@ def video_feed():
 @app.route("/proccesHSV", methods = ["POST"])
 def updateHSV():
     if request.method == 'POST':
-        print(request.get_json())
+        data = request.get_json() 
         return "json recived"
     else:
         return "error json not recived"
 
+@app.route("/empty",methods = ['POST'])
+def empty():
+    if request.method == 'POST':
+        return '''
+        <script> console.Log("init completed") </script>
+        '''
 if __name__ == "__main__":
     app.run(debug = True,threaded = True,use_reloader=False)
