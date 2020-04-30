@@ -5,7 +5,7 @@ frame = None
 
 app = Flask(__name__)
 vc = stream(0).start()
-
+data = {}
 
 def gen():
     while True: 
@@ -32,7 +32,8 @@ def video_feed():
 @app.route("/proccesHSV", methods = ["POST"])
 def updateHSV():
     if request.method == 'POST':
-        data = request.get_json() 
+        data = request.get_json()
+        vc.update_json(data)
         return "json recived"
     else:
         return "error json not recived"
