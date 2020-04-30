@@ -7,7 +7,10 @@ class hsvHandler:
             "smin":0,
             "smax":255,
             "vmin":0,
-            "vmax":255
+            "vmax":255,
+            "erode": False,
+            "dilate": False,
+
         }
     
     def update(self,data):
@@ -24,4 +27,3 @@ class hsvHandler:
 
     def dilate (self):
         return self.json["dilate"]
-    def erode(self):

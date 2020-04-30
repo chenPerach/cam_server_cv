@@ -17,7 +17,6 @@ $(function () {
       },
       change: function () {
         sendjson(route,json)
-        console.log(json)
       }    
     })
   })

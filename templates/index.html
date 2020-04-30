@@ -14,6 +14,13 @@ var json ={
   dilate: false
 }
 route = "/proccesHSV"
+
+function test() {
+  $("#h-range").html("range: " + json["hmin"] + " - "+json["hmax"])
+  $("#s-range").html("range: " + json["smin"] + " - "+json["smax"])
+  $("#v-range").html("range: " + json["vmin"] + " - "+json["vmax"])
+}
+setInterval(test,100)
 </script>
 {% endblock %}
 
@@ -22,17 +29,17 @@ route = "/proccesHSV"
 <div class="form-group">
   <label id="top-label" for="exampleInputEmail1">Hue</label>
   <div id="h" class="my-slider">180</div>
-  <small id="Hue-range" class="form-text text-muted">range: </small>
+  <small id="h-range" class="form-text text-muted">range: </small>
 </div>
 <div class="form-group">
   <label for="exampleInputEmail1">Saturation</label>
   <div id="s" class="my-slider">255</div>
-  <small id="Hue-range" class="form-text text-muted">range: </small>
+  <small id="s-range" class="form-text text-muted">range: </small>
 </div>
 <div class="form-group">
   <label for="exampleInputEmail1">Value</label>
   <div id="v" class="my-slider">255</div>
-  <small id="Hue-range" class="form-text text-muted">range: </small>
+  <small id="v-range" class="form-text text-muted">range: </small>
 </div>
 <div class="custom-control custom-switch">
   <input type="checkbox" class="custom-control-input my-checkbox" id="dilate">
